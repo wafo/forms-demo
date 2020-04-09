@@ -1,24 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Header from './components/UI/header';
+import Nav from './components/UI/nav/nav';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import ExampleForm from './components/forms/exampleForm';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <BrowserRouter>
+        <Header />
+        <Nav />
+        <div className="container" style={{ marginTop: '2.5rem', marginBottom: '1rem' }}>
+          <div className="row">
+            <div className="col-12">
+              <Switch>
+                <Redirect exact from="/" to="form" />
+                <Route exact path="/form" component={ExampleForm} />
+                <Route exact path="/code" component={null} />
+              </Switch>
+            </div>
+          </div>
+        </div>
+      </BrowserRouter>
     </div>
   );
 }

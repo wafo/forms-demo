@@ -1,0 +1,11 @@
+.nav {
+  background-color: #e5e5e5;
+}
+
+.nav :global .nav-link {
+  color: #1d5962;
+}
+
+.nav :global .nav-link.active {
+  background-color: #777 !important;
+}

@@ -1,8 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+// CSS Imports
+import '../node_modules/@wafo/forms/dist/index.css';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import "./App.css";
 
 ReactDOM.render(
   <React.StrictMode>
